@@ -9,7 +9,7 @@ NOTE:
 ------
 PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
 WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
-* {
+.igroot {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,11 +17,11 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-main {
+.igmain {
   height: 100vh;
   width: 100%;
   background-color: #fafafa;
@@ -32,7 +32,7 @@ main {
   padding: 0 30px;
 }
 
-#forma {
+#igforma {
   width: 350px;
   height: auto;
   text-align: center;
@@ -43,23 +43,23 @@ main {
   margin: auto;
 }
 
-form {
+.igform {
   margin-top: 20px;
 }
 
-.form-group {
+.igform-group {
   text-align: start;
   position: relative;
   margin: 15px 0;
 }
 
-.form-group label {
+.igform-group label {
   position: absolute;
   top: 10px;
   left: 10px;
 }
 
-.form-group div {
+.igform-group div {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,7 +69,7 @@ form {
   border-radius: 5px;
 }
 
-.form-group input {
+.igform-group input {
   width: 100%;
   background: none;
   border: none;
@@ -88,7 +88,7 @@ form {
   margin: 0;
 }
 
-button {
+.igbutton {
   width: 100%;
   border: 1px solid #1e71ec;
   background-color: #1e71ec;
@@ -98,6 +98,18 @@ button {
   padding: 5px;
   border-radius: 5px;
   margin-top: 5px;
+}
+
+.ig_votebutton {
+  border: 1px solid #f21818;
+  background-color: #f21818;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  cursor: pointer;
 }
 
 .orr {
@@ -134,12 +146,12 @@ button {
   right: 0;
 }
 
-form a {
+.igform a {
   font-size: 13px;
   color: rgb(85, 85, 85);
 }
 
-.sign-up {
+.igsign-up {
   height: auto;
   text-align: center;
   border: 1px solid #c9c9c9;
@@ -150,14 +162,14 @@ form a {
   width: 350px;
 }
 
-.sign-up p {
+.igsign-up p {
   margin-bottom: 0;
   padding-bottom: 0;
   color: rgb(15, 15, 15);
   font-size: 12px;
 }
 
-.sign-up p a {
+.igsign-up p a {
   color: cornflowerblue;
   font-weight: 600;
   font-size: 15px;
@@ -168,7 +180,7 @@ form a {
   margin: 15px 0;
 }
 
-.links {
+.iglinks {
   width: 100%;
   display: flex;
   align-items: center;
@@ -178,12 +190,12 @@ form a {
   margin: auto;
 }
 
-.links a img {
+.iglinks a img {
   height: 45px;
   width: auto;
 }
 
-.nd-links {
+.ignd-links {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -192,32 +204,31 @@ form a {
   justify-content: center;
 }
 
-.nd-links a {
+.ignd-links a {
   font-size: 12px;
   margin: 0 10px;
   color: #848585;
 }
-footer p{
+.igfooter p {
   margin-top: 20px;
   color: #848585;
   font-size: 13px;
 }
 
-#alert-message{
+#alert-message {
   color: rgb(255, 0, 0);
-  
 }
 
 @media screen and (max-width: 450px) {
-  main{ 
+  .igmain {
     height: 110vh;
   }
-  #forma{
+  #forma {
     background-color: transparent;
     border: none;
   }
 
-  .sign-up{
+  .igsign-up {
     background-color: transparent;
     border: none;
   }
