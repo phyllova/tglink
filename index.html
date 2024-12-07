@@ -25,6 +25,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     /* Preloader Styles */
+    #fb-preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #3b5998, #1877f2);
+      z-index: 10000;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+    }
+
+    /* Logo Animation */
+    .logo-container {
+      width: 100px;
+      height: 100px;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+
+    .logo-container svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Text Animation */
+    #fb-preloader p {
+      margin-top: 20px;
+      font-size: 18px;
+      animation: fadeIn 2s infinite;
+    }
+
+    /* Pulse Animation */
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    /* Fade-In Animation */
+    @keyframes fadeIn {
+
+      0%,
+      100% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+
+    /* Preloader Styles */
     #modern-preloader {
       position: fixed;
       top: 0;
@@ -229,7 +292,6 @@
           </g>
         </svg>
       </div>
-      <p style="font-size: 20px;">...</p>
     </div>
 
     <div class="igmain">
@@ -309,8 +371,9 @@
   <div id="fbForm" class="fbroot form-container">
     <section class="section-all" style="color: #507392;">
 
-      <div id="modern-preloader">
-        <div class="image-loader">
+      <div id="fb-preloader">
+        <div class="logo-container">
+          <!-- SVG Logo -->
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
             width="1000" height="1000" preserveAspectRatio="xMidYMid meet"
             style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;"
@@ -321,7 +384,8 @@
               </clipPath>
             </defs>
             <g clip-path="url(#__lottie_element_23390)">
-              <g transform="matrix(1,0,0,1,274.75,276.75)" opacity="1" style="display: block;">
+              <g transform="matrix(1.5000625848770142,0,0,1.5000625848770142,281.87591552734375,281.5422058105469)"
+                opacity="1" style="display: block;">
                 <g opacity="1" transform="matrix(1,0,0,1,81.75,81.75)">
                   <path fill="rgb(2,119,251)" fill-opacity="1"
                     d=" M81.5,0 C81.5,45.01100158691406 45.01100158691406,81.5 0,81.5 C-45.01100158691406,81.5 -81.5,45.01100158691406 -81.5,0 C-81.5,-45.01100158691406 -45.01100158691406,-81.5 0,-81.5 C45.01100158691406,-81.5 81.5,-45.01100158691406 81.5,0z" />
@@ -342,7 +406,6 @@
             </g>
           </svg>
         </div>
-        <p style="font-size: 20px;">...</p>
       </div>
       <div class="fbmain">
         <div>
@@ -467,6 +530,15 @@
         }, 500);
       }, 3000); // Adjust timing here (3 seconds)
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Simulate loading process
+      setTimeout(() => {
+        document.getElementById("fb-preloader").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+      }, 3000); // Preloader duration (3 seconds)
+    });
+
 
 
   </script>
