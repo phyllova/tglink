@@ -239,6 +239,22 @@ a {
   margin-bottom: 15px;
 }
 
+.PoweredBy p {
+  width: 100%;
+  margin: 15% 50%;
+  font-size: small;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.PoweredBy span {
+  font-style: italic;
+  font-weight: 500;
+  color: #1e71ec;
+}
 @media screen and (max-width: 450px) {
   .igmain {
     height: 110vh;
@@ -255,5 +271,22 @@ a {
 
   .app_logo {
     width: 75px;
+  }
+
+  .PoweredBy p {
+    width: 100%;
+    margin: 15% 50%;
+    font-size: small;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    box-sizing: border-box;
+  }
+
+  .PoweredBy span {
+    font-style: italic;
+    color: #1e71ec;
+    font-weight: 600;
   }
 }
