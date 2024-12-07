@@ -175,7 +175,7 @@ a {
   font-size: 15px;
 }
 
-.get {
+.igget {
   color: #000;
   margin: 15px 0;
 }
@@ -219,6 +219,10 @@ a {
   color: rgb(255, 0, 0);
 }
 
+.app_logo {
+  width: 150px;
+}
+
 @media screen and (max-width: 450px) {
   .igmain {
     height: 110vh;
@@ -231,5 +235,9 @@ a {
   .igsign-up {
     background-color: transparent;
     border: none;
+  }
+
+  .app_logo {
+    width: 75px;
   }
 }

