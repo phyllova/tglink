@@ -170,9 +170,9 @@ a {
 }
 
 .igsign-up p a {
-  color: cornflowerblue;
-  font-weight: 600;
-  font-size: 15px;
+  color: #1e71ec;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .igget {
@@ -221,6 +221,22 @@ a {
 
 .app_logo {
   width: 150px;
+}
+
+.logFb {
+  margin: 5;
+  display: flex;
+  justify-content: center;
+  color: #1e71ec;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.logFb img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-bottom: 15px;
 }
 
 @media screen and (max-width: 450px) {
