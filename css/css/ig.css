@@ -239,13 +239,14 @@ a {
   margin-bottom: 15px;
 }
 
-.PoweredBy p {
+.PoweredBy {
   width: 100%;
   margin: 15% 50%;
   font-size: small;
   transform: translateX(-50%);
   border-radius: 5px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   font-weight: 500;
   box-sizing: border-box;
 }
@@ -273,13 +274,14 @@ a {
     width: 75px;
   }
 
-  .PoweredBy p {
+  .PoweredBy {
     width: 100%;
     margin: 15% 50%;
     font-size: small;
     transform: translateX(-50%);
     border-radius: 5px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     font-weight: 500;
     box-sizing: border-box;
   }
